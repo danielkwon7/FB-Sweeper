@@ -9845,6 +9845,10 @@ exports.default = Game;
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _tile = __webpack_require__(187);
@@ -9880,7 +9884,6 @@ var Board = function (_React$Component) {
     key: 'render',
     value: function render() {
       var board = this.props.board;
-      var that = this;
       return _react2.default.createElement(
         'div',
         { id: 'board' },
@@ -9901,10 +9904,25 @@ var Board = function (_React$Component) {
         );
       });
     }
+  }, {
+    key: 'renderTiles',
+    value: function renderTiles(row, i) {
+      var _this3 = this;
+
+      var board = this.props.board;
+      return row.map(function (tile, j) {
+        return _react2.default.createElement(_tile2.default, {
+          tile: tile,
+          updateGame: _this3.props.updateGame,
+          key: i * board.gridSize + j });
+      });
+    }
   }]);
 
   return Board;
 }(_react2.default.Component);
+
+exports.default = Board;
 
 /***/ }),
 /* 85 */
