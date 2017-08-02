@@ -9845,6 +9845,67 @@ exports.default = Game;
 "use strict";
 
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _tile = __webpack_require__(187);
+
+var _tile2 = _interopRequireDefault(_tile);
+
+var _react = __webpack_require__(50);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Board = function (_React$Component) {
+  _inherits(Board, _React$Component);
+
+  function Board(props) {
+    _classCallCheck(this, Board);
+
+    var _this = _possibleConstructorReturn(this, (Board.__proto__ || Object.getPrototypeOf(Board)).call(this, props));
+
+    _this.renderRows = _this.renderRows.bind(_this);
+    _this.renderTiles = _this.renderTiles.bind(_this);
+    return _this;
+  }
+
+  _createClass(Board, [{
+    key: 'render',
+    value: function render() {
+      var board = this.props.board;
+      var that = this;
+      return _react2.default.createElement(
+        'div',
+        { id: 'board' },
+        this.renderRows()
+      );
+    }
+  }, {
+    key: 'renderRows',
+    value: function renderRows() {
+      var _this2 = this;
+
+      var board = this.props.board;
+      return board.grid.map(function (row, i) {
+        return _react2.default.createElement(
+          'div',
+          { className: 'row', key: 'row-' + i },
+          _this2.renderTiles(row, i)
+        );
+      });
+    }
+  }]);
+
+  return Board;
+}(_react2.default.Component);
+
 /***/ }),
 /* 85 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -22476,7 +22537,14 @@ module.exports = ReactDOMInvalidARIAHook;
 /***/ (function(module, exports) {
 
 "use strict";
-throw new Error("Module build failed: SyntaxError: Unexpected token, expected ) (26:55)\n\n\u001b[0m \u001b[90m 24 | \u001b[39m\n \u001b[90m 25 | \u001b[39m    \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mexplored \u001b[33m=\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 26 | \u001b[39m    \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39m\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mbombed \u001b[33m&&\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39madjacentBombCount() \u001b[33m===\u001b[39m \u001b[35m0\u001b[39m {\n \u001b[90m    | \u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 27 | \u001b[39m      \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mneighbors()\u001b[33m.\u001b[39mforEach(tile \u001b[33m=>\u001b[39m {\n \u001b[90m 28 | \u001b[39m        tile\u001b[33m.\u001b[39mexplore()\u001b[33m;\u001b[39m\n \u001b[90m 29 | \u001b[39m      })\u001b[33m;\u001b[39m\u001b[0m\n");
+throw new Error("Module build failed: SyntaxError: Unexpected token (30:5)\n\n\u001b[0m \u001b[90m 28 | \u001b[39m        tile\u001b[33m.\u001b[39mexplore()\u001b[33m;\u001b[39m\n \u001b[90m 29 | \u001b[39m      })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 30 | \u001b[39m    })\n \u001b[90m    | \u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 31 | \u001b[39m  }\n \u001b[90m 32 | \u001b[39m\n \u001b[90m 33 | \u001b[39m  neighbors() {\u001b[0m\n");
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 /***/ })
 /******/ ]);
