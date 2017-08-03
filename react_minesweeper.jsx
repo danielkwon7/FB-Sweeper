@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 document.addEventListener("DOMContentLoaded", () => {
-  React.DOM.render(
+  ReactDOM.render(
     <Game />, document.getElementById('main')
   );
 });

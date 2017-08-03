@@ -27,7 +27,7 @@ export class Tile {
       this.neighbors().forEach(tile => {
         tile.explore();
       });
-    })
+    }
   }
 
   neighbors() {
@@ -70,7 +70,7 @@ export class Board {
     for (let i = 0; i < this.gridSize; i++) {
       this.grid.push([]);
       for (let j = 0; j < this.gridSize; j++) {
-        const title = new Tile(this, [i, j]);
+        const tile = new Tile(this, [i, j]);
         this.grid[i].push(tile);
       }
     }
