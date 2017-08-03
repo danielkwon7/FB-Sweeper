@@ -13,7 +13,7 @@ class Tile extends React.Component {
 
   render() {
     const tile = this.props.tile;
-    let klass, text, count;
+    let klass, text, count, figure;
     if (tile.explored) {
       if (tile.bombed) {
         klass = 'bombed';
@@ -21,7 +21,10 @@ class Tile extends React.Component {
       } else {
         klass = 'explored';
         count = tile.adjacentBombCount();
-        text = (count > 0 ? `${count}`: "")
+        text = (count > 0 ? `${count}`: "");
+        if (count > 0) {
+          klass = 'num-explored'
+        };
       }
     } else if (tile.flagged) {
       klass = 'flagged';

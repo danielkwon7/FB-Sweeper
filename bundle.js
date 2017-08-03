@@ -9979,7 +9979,8 @@ var Tile = function (_React$Component) {
       var tile = this.props.tile;
       var klass = void 0,
           text = void 0,
-          count = void 0;
+          count = void 0,
+          figure = void 0;
       if (tile.explored) {
         if (tile.bombed) {
           klass = 'bombed';
@@ -9988,6 +9989,9 @@ var Tile = function (_React$Component) {
           klass = 'explored';
           count = tile.adjacentBombCount();
           text = count > 0 ? '' + count : "";
+          if (count > 0) {
+            klass = 'num-explored';
+          };
         }
       } else if (tile.flagged) {
         klass = 'flagged';
