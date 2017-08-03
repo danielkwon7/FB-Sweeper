@@ -9,7 +9,7 @@ export class Tile {
 
   adjacentBombCount() {
     let bombCount = 0;
-    this.neigbors().forEach(neighbor => {
+    this.neighbors().forEach(neighbor => {
       if (neighbor.bombed) {
         bombCount++;
       }
